@@ -1,6 +1,4 @@
-#### This version will be replaced early May by [docker-mailserver:v2](https://github.com/tomav/docker-mailserver/tree/v2)
-
-Wiki content has been updated to match new v2 version.
+#### This version has been replaced early May by [docker-mailserver:v2](https://github.com/tomav/docker-mailserver/tree/master)
 
 ---
 
