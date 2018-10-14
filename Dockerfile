@@ -28,6 +28,7 @@ RUN apt-get update -q --fix-missing && \
     clamav-daemon \
     cpio \
     curl \
+    dumb-init \
     ed \
     fail2ban \
     fetchmail \
@@ -218,6 +219,8 @@ COPY target/supervisor/conf.d/* /etc/supervisor/conf.d/
 
 EXPOSE 25 587 143 465 993 110 995 4190
 
-CMD supervisord -c /etc/supervisor/supervisord.conf
+ENTRYPOINT ["/usr/bin/dumb-init", "--"]
+
+CMD ["supervisord", "-c", "/etc/supervisor/supervisord.conf"]
 
 ADD target/filebeat.yml.tmpl /etc/filebeat/filebeat.yml.tmpl
